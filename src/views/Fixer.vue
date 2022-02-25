@@ -30,7 +30,7 @@
             async apiFixer(){
 
                 const response = await axios.get('http://data.fixer.io/api/latest?access_key=a047dec8343d84e4f5590a1db236e2ad');
-                console.log(response.headers );
+                //console.log(response.headers );
 
                 this.rates = response.data.rates['MXN'];                       
                 this.date = response.headers['last-modified'];
