@@ -32,17 +32,13 @@
 
                 this.rates = response.data.bmx.series[0].datos[0].dato
                 this.date = response.data.bmx.series[0].datos[0].fecha
-
-                                
-
-
             }
 
         },
 
         created(){
             /* Created es un metodo para ejecutar simpre*/
-            this.apiBanxico();
+            //this.apiBanxico();
         }
 
     }

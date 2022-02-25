@@ -28,11 +28,10 @@
         methods: {
 
             async apiFixer(){
-
-                const response = await axios.get('http://data.fixer.io/api/latest?access_key=a047dec8343d84e4f5590a1db236e2ad');
+                const response = await axios.get('http://data.fixer.io/api/latest?access_key=4f32bdac3186eb5c64c36c75653718b9');
                 //console.log(response.headers );
 
-                this.rates = response.data.rates['MXN'];                       
+                this.rates = response.data.rates['MXN'] / response.data.rates['USD'];                               
                 this.date = response.headers['last-modified'];
 
 
@@ -42,7 +41,7 @@
 
         created(){
             /* Created es un metodo para ejecutar simpre*/
-            this.apiFixer();
+            //this.apiFixer();
         }
 
     }
