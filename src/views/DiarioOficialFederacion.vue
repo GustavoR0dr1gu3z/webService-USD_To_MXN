@@ -23,4 +23,11 @@
         text-align: center;
     }
 
+    .card{
+        /*contorno*/
+        border: 1px solid rgb(140, 135, 135);
+        /*borde redondeado*/
+        border-radius: 5px;    
+    }
+
 </style>

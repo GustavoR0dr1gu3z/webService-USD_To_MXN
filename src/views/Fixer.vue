@@ -1,7 +1,7 @@
 <template>
     <div class="fixer">
 
-        <div class="card">
+        <div class="card ">
             <div class="card-header">
                 USD a MXN con Fixer
             </div>
@@ -28,11 +28,14 @@
         methods: {
 
             async apiFixer(){
-                const response = await axios.get('http://data.fixer.io/api/latest?access_key=a047dec8343d84e4f5590a1db236e2ad');
-                console.log(response.data);
 
-                this.date = response.data.date;
-                this.rates = response.data.rates['MXN'];
+                const response = await axios.get('http://data.fixer.io/api/latest?access_key=a047dec8343d84e4f5590a1db236e2ad');
+                console.log(response.headers );
+
+                this.rates = response.data.rates['MXN'];                       
+                this.date = response.headers['last-modified'];
+
+
             }
 
         },
@@ -47,9 +50,17 @@
 
 <style scoped>
     .fixer{
-        padding: 20px;
+        padding-top: 20px;
         display: flex;
         justify-content: center;
         text-align: center;
     }
+
+    .card{
+        /*contorno*/
+        border: 1px solid rgb(140, 135, 135);
+        /*borde redondeado*/
+        border-radius: 5px;    
+    }
+
 </style>

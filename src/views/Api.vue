@@ -27,9 +27,10 @@ export default {
 <style scoped>
 
     .api{
-        padding: 20px;
+        padding-top: 0px;
         display: flex;
         justify-content: center;
         text-align: center;
+        flex-direction: column;        
     }
 </style>
