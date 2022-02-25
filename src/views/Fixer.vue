@@ -1,8 +1,18 @@
 <template>
     <div class="fixer">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <h1>Fixer</h1>
-        <h3>{{message}}</h3>
+
+        <div class="card">
+            <div class="card-header">
+                USD a MXN con Fixer
+            </div>
+            
+            <div class="card-body">
+                <h5 class="card-title">Fecha de Última Modificación:</h5>
+                <p class="card-text">{{date}}</p>
+                <button disabled="disabled">{{rates}}</button>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -11,7 +21,8 @@
     export default {
         data() {
             return {
-                message: 'Hello Vue!'
+                date: '',
+                rates: '',
             }
         },
         methods: {
@@ -19,6 +30,9 @@
             async apiFixer(){
                 const response = await axios.get('http://data.fixer.io/api/latest?access_key=a047dec8343d84e4f5590a1db236e2ad');
                 console.log(response.data);
+
+                this.date = response.data.date;
+                this.rates = response.data.rates['MXN'];
             }
 
         },
@@ -30,3 +44,12 @@
 
     }
 </script>
+
+<style scoped>
+    .fixer{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
