@@ -27,9 +27,11 @@
         methods: {
 
             async apiBanxico(){
+                // TOKEN Para acceder a la API
                 const token = '4918402b8c2e0877e744dbaabadf59807e6cd80333238c1ad479608e5140d84c'
                 const response = await axios.get('https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/oportuno?token=4918402b8c2e0877e744dbaabadf59807e6cd80333238c1ad479608e5140d84c');
 
+                // Se acceden a los datos de la API y se guardan en variables
                 this.rates = response.data.bmx.series[0].datos[0].dato
                 this.date = response.data.bmx.series[0].datos[0].fecha
             }

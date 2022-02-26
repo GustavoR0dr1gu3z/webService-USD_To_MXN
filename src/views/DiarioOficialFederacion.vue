@@ -29,7 +29,11 @@
             getDateAPI(){
                 // Abrir un archivo json
                 const response = require('../banxico.json');
+
+                // Imprimir el resultado
                 console.log(response);
+
+                // Modificar los datos para que muestre en pantalla
                 this.date = response.fecha;
                 this.rates = response.cantidad;
 

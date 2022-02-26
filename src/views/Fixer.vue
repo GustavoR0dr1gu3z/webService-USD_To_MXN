@@ -28,9 +28,11 @@
         methods: {
 
             async apiFixer(){
+                // Axios a la API
                 const response = await axios.get('http://data.fixer.io/api/latest?access_key=4f32bdac3186eb5c64c36c75653718b9');
                 //console.log(response.headers );
 
+                // Se acceden a los datos de la API y se guardan en variables
                 this.rates = response.data.rates['MXN'] / response.data.rates['USD'];                               
                 this.date = response.headers['last-modified'];
 

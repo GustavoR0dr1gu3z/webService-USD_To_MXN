@@ -14,9 +14,13 @@ const fs = require('fs');
 
 
         const contenidoF = await page.evaluate(() => {
-            // Seleccionamos la fecha
-            const fecha = document.querySelector('body > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(1) > td').innerText;
-            const cantidad = document.querySelector('body > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:nth-child(1) > td').innerText;
+            
+            // Seleccionamos la fecha            
+            const fecha = document.querySelector('body > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:last-child > td').innerText
+
+            // Seleccionamos la cantidad
+            const cantidad = document.querySelector('body > table > tbody > tr:nth-child(2) > td:nth-child(1) > table > tbody > tr:nth-child(2) > td:nth-child(3) > table > tbody > tr:last-child > td').innerText
+
             return {fecha, cantidad};
         });
         
