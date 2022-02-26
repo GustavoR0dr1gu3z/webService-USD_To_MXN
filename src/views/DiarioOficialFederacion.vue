@@ -15,28 +15,30 @@
 </template>
 
 <script>
+    //const cheerion = require('cheerio');    
     export default {
 
         data() {
-            return {
+            return {                
                 date: '',
                 rates: '',
             }
         },
 
         methods: {
+            getDateAPI(){
+                // Abrir un archivo json
+                const response = require('../banxico.json');
+                console.log(response);
+                this.date = response.fecha;
+                this.rates = response.cantidad;
 
-            async apiDOF(){
-                /* Web Scraping */
-
-            }           
-
-
+            }
         },
 
         created(){
             /* Created es un metodo para ejecutar simpre*/
-            //this.apiDOF();
+            this.getDateAPI();
         }
 
     }
