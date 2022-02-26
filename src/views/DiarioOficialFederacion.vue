@@ -14,6 +14,37 @@
     </div>
 </template>
 
+<script>
+    export default {
+
+        data() {
+            return {
+                date: '',
+                rates: '',
+            }
+        },
+
+        methods: {
+
+            async apiDOF(){
+                /* Web Scraping */
+
+            }           
+
+
+        },
+
+        created(){
+            /* Created es un metodo para ejecutar simpre*/
+            //this.apiDOF();
+        }
+
+    }
+
+</script>
+
+
+
 <style scoped>
         
     .diarioOficialFederacion{
