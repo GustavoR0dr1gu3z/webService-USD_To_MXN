@@ -26,9 +26,6 @@ const fs = require('fs');
         // Imprimirmos la cantidad
         console.log(contenidoF.cantidad);
 
-        // Guardamos en un archivo txt        
-        fs.writeFileSync('banxico.txt', contenidoF.fecha + '\n' + contenidoF.cantidad);
-
         // Guardamos en un archivo JSON
         fs.writeFileSync('banxico.json', JSON.stringify(contenidoF));
         
