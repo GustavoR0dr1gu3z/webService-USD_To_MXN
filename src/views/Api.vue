@@ -21,16 +21,30 @@ export default {
     Banxico,
     DiarioOficialFederacion,
   },
+
+  data() {
+    return {
+      //
+    }
+  },
+
+  methods: {
+    //
+  },
+
+  created() {
+
+  },
 }
 </script>
 
 <style scoped>
 
     .api{
-        padding-top: 0px;
+        padding-top: 50px;
         display: flex;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;        
+        justify-content: space-around;
+        text-align: center;        
+        flex-direction: row;        
     }
 </style>
